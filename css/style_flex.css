@@ -1,0 +1,32 @@
+*{margin: 0; padding: 0; box-sizing: border-box;}
+main{
+    height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    gap:2rem;
+    align-items: center; /*Mindig működik.*/
+    align-content: center; /*Csak többsoba tördelt tartalomnál működ.*/
+    justify-content: center;
+}
+article{
+    border: 1px solid rgba(0,0,0,.5);
+    width: 6vw;
+    height: 6vw;
+    background: radial-gradient(rgb(211, 8, 8) 10%, rgb(58, 167, 225) 50%);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: scale .1s;  /*A növekedés átmenete egyenletesebb lesz.*/
+}
+article:nth-child(3){
+    scale: .9;
+    cursor: pointer;
+    user-select: none; /*Nem lehet kiválasztani a tartalmat!*/
+}
+article:active{
+    scale: 1.1;
+}
+article:hover{
+    box-shadow: 0 0 10px 3px rgb(50,50,50);
+}

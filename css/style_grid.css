@@ -1,0 +1,46 @@
+*{margin: 0; padding: 0; box-sizing: border-box;}
+body{
+    background-color: hsl(40, 70%, 50%);
+}
+.boxes{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+section{
+    padding: 1rem;
+    height: max(40vw, 23rem);
+    width: max(40vw, 23rem);
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    gap: 1rem;
+    justify-items: center; /*Az egyes grid-gyermek-elemek.*/
+    justify-content: center; /*A grid gyermek elemeinek összessége*/
+    align-items: center; /*Az egyes grid-gyermek-elemek.*/
+    align-content: center; /*A grid gyermek elemeinek összessége*/
+}
+article{
+    border: 1px solid rgba(0,0,0,.5);
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(rgb(211, 8, 8) 10%, rgb(58, 167, 225) 50%);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: scale .1s;  /*A növekedés átmenete egyenletesebb lesz.*/
+}
+article:nth-child(3){
+    scale: .9;
+    cursor: pointer;
+    user-select: none; /*Nem lehet kiválasztani a tartalmat!*/
+
+}
+article:active{
+    scale: 1.1;
+}
+article:hover{
+    box-shadow: 0 0 10px 3px rgb(50,50,50);
+}
